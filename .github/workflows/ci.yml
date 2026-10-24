@@ -22,11 +22,16 @@ jobs:
       - name: Smoke test CLI
         run: |
           python -m tinyredis --port 6399 --dir /tmp &
+          SRV_PID=$!
           sleep 1
-          python -c "from tinyredis.client import Redis; \
-assert Redis(port=6399, timeout=5).set('k', 'v') == 'OK'; \
-assert Redis(port=6399, timeout=5).get('k') == b'v'"
-          kill %1
+          python - <<'EOF'
+          from tinyredis.client import Redis
+          r = Redis(port=6399, timeout=5)
+          assert r.set("k", "v") == "OK"
+          assert r.get("k") == b"v"
+          print("smoke test passed")
+          EOF
+          kill $SRV_PID
 
   compat:
     # 官方 redis-py 客户端兼容性（单独一个 job：redis 是开发期依赖）
