@@ -8,7 +8,7 @@
 ## 开发流程
 
 ```bash
-git clone https://github.com/USER/tiny-redis.git
+git clone https://github.com/Chenjie-Prog/tiny-redis.git
 cd tiny-redis
 python -m unittest discover -s tests     # 133 个测试应全部通过
 ```

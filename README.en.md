@@ -4,7 +4,7 @@
 
 **A mini Redis built from scratch on the pure Python standard library — drivable by the official redis-py client**
 
-[![Tests](https://github.com/USER/tiny-redis/actions/workflows/ci.yml/badge.svg)](https://github.com/USER/tiny-redis/actions/workflows/ci.yml)
+[![Tests](https://github.com/Chenjie-Prog/tiny-redis/actions/workflows/ci.yml/badge.svg)](https://github.com/Chenjie-Prog/tiny-redis/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](#why-this-project)
@@ -30,7 +30,7 @@ CRC64 integrity checking — in one small package with a 5-chapter tutorial.
 ## Quick start
 
 ```bash
-git clone https://github.com/USER/tiny-redis.git
+git clone https://github.com/Chenjie-Prog/tiny-redis.git
 cd tiny-redis
 python -m tinyredis --port 6380        # start the server
 ```
@@ -65,7 +65,7 @@ with TinyRedisServer(port=0, snapshot_path="data/dump.trdb") as server:
 ### Install as a CLI
 
 ```bash
-pip install git+https://github.com/USER/tiny-redis.git
+pip install git+https://github.com/Chenjie-Prog/tiny-redis.git
 tiny-redis-server --port 6380 --dir ./data --snapshot-interval 60
 ```
 

@@ -29,9 +29,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/USER/tiny-redis"
-Repository = "https://github.com/USER/tiny-redis"
-Issues = "https://github.com/USER/tiny-redis/issues"
+Homepage = "https://github.com/Chenjie-Prog/tiny-redis"
+Repository = "https://github.com/Chenjie-Prog/tiny-redis"
+Issues = "https://github.com/Chenjie-Prog/tiny-redis/issues"
 
 [project.scripts]
 tiny-redis-server = "tinyredis.__main__:main"

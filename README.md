@@ -4,7 +4,7 @@
 
 **用纯 Python 标准库从零实现的迷你 Redis —— 能被官方 redis-py 直接驱动**
 
-[![Tests](https://github.com/USER/tiny-redis/actions/workflows/ci.yml/badge.svg)](https://github.com/USER/tiny-redis/actions/workflows/ci.yml)
+[![Tests](https://github.com/Chenjie-Prog/tiny-redis/actions/workflows/ci.yml/badge.svg)](https://github.com/Chenjie-Prog/tiny-redis/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen)](#为什么做这个项目)
@@ -41,7 +41,7 @@ Redis 协议兼容服务器：RESP2 解析器、selectors 单线程事件循环�
 ## 快速开始
 
 ```bash
-git clone https://github.com/USER/tiny-redis.git
+git clone https://github.com/Chenjie-Prog/tiny-redis.git
 cd tiny-redis
 
 python -m tinyredis --port 6380          # 启动服务器
@@ -77,7 +77,7 @@ with TinyRedisServer(port=0, snapshot_path="data/dump.trdb") as server:
 ### 作为命令行程序安装
 
 ```bash
-pip install git+https://github.com/USER/tiny-redis.git
+pip install git+https://github.com/Chenjie-Prog/tiny-redis.git
 tiny-redis-server --port 6380 --dir ./data --snapshot-interval 60
 ```
 
