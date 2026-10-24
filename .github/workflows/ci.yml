@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run tests
+        run: python -m unittest discover -s tests -v
+      - name: Smoke test CLI
+        run: |
+          python -m tinyredis --port 6399 --dir /tmp &
+          sleep 1
+          python -c "from tinyredis.client import Redis; \
+assert Redis(port=6399, timeout=5).set('k', 'v') == 'OK'; \
+assert Redis(port=6399, timeout=5).get('k') == b'v'"
+          kill %1
+
+  compat:
+    # 官方 redis-py 客户端兼容性（单独一个 job：redis 是开发期依赖）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install redis
+      - run: python scripts/compat_check.py
